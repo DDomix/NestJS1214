@@ -3,12 +3,44 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title><%= message %></title>
+    <title>App</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
     <script src='main.js'></script>
 </head>
 <body>
-    <p><%= message %></p>
+  <nav>
+    <form action="/macskak/uj" method="get">
+      <input type="submit" value="Új macska hozzáadása" />
+    </form>
+  </nav>
+  <main>
+    <form action="" method="get">
+    <input type="search" name="kereses" />
+    <input type="submit" value="Keresés" />
+  </form>
+  <table>
+    <thead>
+      <tr>
+        <td>
+          Súly
+        </td>
+        <td>
+          Szem szín
+        </td>
+      </tr>
+    </thead>
+    <tbody>
+      <% for (let macska of macskak) { %>
+        <tr>
+            <td><%= macska.suly %></td>
+            <td><%= macska.szem_szin %></td>
+        </tr>
+    <% } %>
+    </tbody>
+  </table>  
+  </main>
+  
+  
 </body>
 </html>
